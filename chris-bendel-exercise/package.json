@@ -1,0 +1,30 @@
+{
+  "name": "@dealerpolicy/developer-test",
+  "version": "0.1.1",
+  "description": "This is the DealerPolicy Developer test",
+  "author": "DealerPolicy Developer",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "build:clean": "rimraf dist",
+    "test": "jest src --ci --reporters=jest-junit --reporters=default --coverage --coverageReporters=cobertura --coverageReporters=html",
+    "test:clean": "rimraf junit.xml && rimraf coverage",
+    "clean": "npm run build:clean && npm run test:clean",
+    "check": "npm run build && npm run test && npm run clean"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.9",
+    "@types/moment": "^2.13.0",
+    "jest": "^26.3.0",
+    "jest-junit": "^11.1.0",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.1.4",
+    "typescript": "^3.9.5"
+  }
+}
